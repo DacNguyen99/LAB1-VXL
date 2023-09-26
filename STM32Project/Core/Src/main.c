@@ -89,12 +89,27 @@ int main(void)
 
   /* USER CODE END 2 */
 
+  // Idea: Use counter variable and HAL_Delay(1000)
+  int counter = 4;
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  if (counter == 4) {
+		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
+		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
+	  }
+	  else if (counter == 2) {
+		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
+		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
+	  }
+	  counter--;
+	  if (counter == 0) {
+		  counter = 4;
+	  }
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
