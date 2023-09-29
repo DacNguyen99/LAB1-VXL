@@ -20,6 +20,50 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
+void setNumberOnClock(int num){
+	switch(num){
+	case 0:
+		HAL_GPIO_WritePin(GPIOA, LED_1_Pin, 0);
+		break;
+	case 1:
+		HAL_GPIO_WritePin(GPIOA, LED_2_Pin, 0);
+		break;
+	case 2:
+		HAL_GPIO_WritePin(GPIOA, LED_3_Pin, 0);
+		break;
+	case 3:
+		HAL_GPIO_WritePin(GPIOA, LED_4_Pin, 0);
+		break;
+	case 4:
+		HAL_GPIO_WritePin(GPIOA, LED_5_Pin, 0);
+		break;
+	case 5:
+		HAL_GPIO_WritePin(GPIOA, LED_6_Pin, 0);
+		break;
+	case 6:
+		HAL_GPIO_WritePin(GPIOA, LED_7_Pin, 0);
+		break;
+	case 7:
+		HAL_GPIO_WritePin(GPIOA, LED_8_Pin, 0);
+		break;
+	case 8:
+		HAL_GPIO_WritePin(GPIOA, LED_9_Pin, 0);
+		break;
+	case 9:
+		HAL_GPIO_WritePin(GPIOA, LED_10_Pin, 0);
+		break;
+	case 10:
+		HAL_GPIO_WritePin(GPIOA, LED_11_Pin, 0);
+		break;
+	case 11:
+		HAL_GPIO_WritePin(GPIOA, LED_12_Pin, 0);
+		break;
+	default:
+		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, 1);
+		break;
+	}
+}
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
