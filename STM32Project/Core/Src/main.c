@@ -20,61 +20,96 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-void LED_Seq(int num) {
-	switch(num) {
-	case 1:
+void clearAllClock(){
+	HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, 1);
+}
+
+void setNumberOnClock(int num){
+	switch(num){
+	case 0:
 		HAL_GPIO_WritePin(GPIOA, LED_1_Pin, 0);
-		HAL_GPIO_WritePin(GPIOA, LED_2_Pin|LED_3_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, 1);
+		break;
+	case 1:
+		HAL_GPIO_WritePin(GPIOA, LED_2_Pin, 0);
 		break;
 	case 2:
-		HAL_GPIO_WritePin(GPIOA, LED_2_Pin, 0);
-		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_3_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, 1);
+		HAL_GPIO_WritePin(GPIOA, LED_3_Pin, 0);
 		break;
 	case 3:
-		HAL_GPIO_WritePin(GPIOA, LED_3_Pin, 0);
-		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, 1);
+		HAL_GPIO_WritePin(GPIOA, LED_4_Pin, 0);
 		break;
 	case 4:
-		HAL_GPIO_WritePin(GPIOA, LED_4_Pin, 0);
-		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, 1);
+		HAL_GPIO_WritePin(GPIOA, LED_5_Pin, 0);
 		break;
 	case 5:
-		HAL_GPIO_WritePin(GPIOA, LED_5_Pin, 0);
-		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, 1);
+		HAL_GPIO_WritePin(GPIOA, LED_6_Pin, 0);
 		break;
 	case 6:
-		HAL_GPIO_WritePin(GPIOA, LED_6_Pin, 0);
-		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin|LED_5_Pin|LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, 1);
+		HAL_GPIO_WritePin(GPIOA, LED_7_Pin, 0);
 		break;
 	case 7:
-		HAL_GPIO_WritePin(GPIOA, LED_7_Pin, 0);
-		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, 1);
+		HAL_GPIO_WritePin(GPIOA, LED_8_Pin, 0);
 		break;
 	case 8:
-		HAL_GPIO_WritePin(GPIOA, LED_8_Pin, 0);
-		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, 1);
+		HAL_GPIO_WritePin(GPIOA, LED_9_Pin, 0);
 		break;
 	case 9:
-		HAL_GPIO_WritePin(GPIOA, LED_9_Pin, 0);
-		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, 1);
+		HAL_GPIO_WritePin(GPIOA, LED_10_Pin, 0);
 		break;
 	case 10:
-		HAL_GPIO_WritePin(GPIOA, LED_10_Pin, 0);
-		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_11_Pin|LED_12_Pin, 1);
+		HAL_GPIO_WritePin(GPIOA, LED_11_Pin, 0);
 		break;
 	case 11:
-		HAL_GPIO_WritePin(GPIOA, LED_11_Pin, 0);
-		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_12_Pin, 1);
-		break;
-	case 12:
 		HAL_GPIO_WritePin(GPIOA, LED_12_Pin, 0);
-		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin, 1);
 		break;
 	default:
 		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, 1);
 		break;
 	}
+}
 
+void clearNumberOnClock(int num){
+	switch(num){
+	case 0:
+		HAL_GPIO_WritePin(GPIOA, LED_1_Pin, 1);
+		break;
+	case 1:
+		HAL_GPIO_WritePin(GPIOA, LED_2_Pin, 1);
+		break;
+	case 2:
+		HAL_GPIO_WritePin(GPIOA, LED_3_Pin, 1);
+		break;
+	case 3:
+		HAL_GPIO_WritePin(GPIOA, LED_4_Pin, 1);
+		break;
+	case 4:
+		HAL_GPIO_WritePin(GPIOA, LED_5_Pin, 1);
+		break;
+	case 5:
+		HAL_GPIO_WritePin(GPIOA, LED_6_Pin, 1);
+		break;
+	case 6:
+		HAL_GPIO_WritePin(GPIOA, LED_7_Pin, 1);
+		break;
+	case 7:
+		HAL_GPIO_WritePin(GPIOA, LED_8_Pin, 1);
+		break;
+	case 8:
+		HAL_GPIO_WritePin(GPIOA, LED_9_Pin, 1);
+		break;
+	case 9:
+		HAL_GPIO_WritePin(GPIOA, LED_10_Pin, 1);
+		break;
+	case 10:
+		HAL_GPIO_WritePin(GPIOA, LED_11_Pin, 1);
+		break;
+	case 11:
+		HAL_GPIO_WritePin(GPIOA, LED_12_Pin, 1);
+		break;
+	default:
+		HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, 1);
+		break;
+	}
 }
 
 /* Private includes ----------------------------------------------------------*/
@@ -145,17 +180,37 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
-  int counter = 1;
+  clearAllClock();
+  // Suppose that our clock has these properties:
+  // Second LED turns every 1 second, Minute LED turns every 12 seconds, Hour LED turns every 144 seconds
+  // Set an input time for the clock (3h6'0'')
+  int hour = 3, minute = 6, second = 0;
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
-	  if (counter >= 13) {
-		  counter = 1;
-	  }
-	  LED_Seq(counter++);
+	  // Set LEDs on
+	  setNumberOnClock(second);
+	  setNumberOnClock(minute);
+	  setNumberOnClock(hour);
 	  HAL_Delay(1000);
+	  clearNumberOnClock(second++);
+	  if (second > 11) {
+		  // Minute LED turns
+		  second = 0;
+		  clearNumberOnClock(minute);
+		  minute++;
+		  if (minute > 11) {
+			  // Hour LED turns
+			  minute = 0;
+			  clearNumberOnClock(hour);
+			  hour++;
+			  if (hour > 11) {
+				  hour = 0;
+			  }
+		  }
+	  }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
